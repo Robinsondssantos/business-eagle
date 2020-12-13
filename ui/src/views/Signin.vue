@@ -37,7 +37,7 @@ export default {
   },
   methods: {
     logIn: function () {
-      console.log('log in')
+      this.$router.push('/dashboard')
     }
   }  
 }
