@@ -90,7 +90,6 @@ export default {
 
   .box {
     margin: auto;
-    min-width: 420px;
     padding: 50px 40px;
     border-radius: 3px;
     background: #ffffff;
