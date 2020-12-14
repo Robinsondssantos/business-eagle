@@ -4,5 +4,8 @@
   "description": "Business Eagle API",
   "main": "index.js",
   "author": "Robinson D. S. Santos",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
