@@ -1,0 +1,8 @@
+{
+  "name": "business-eagle-api",
+  "version": "1.0.0",
+  "description": "Business Eagle API",
+  "main": "index.js",
+  "author": "Robinson D. S. Santos",
+  "license": "MIT"
+}
