@@ -16,7 +16,7 @@
           <dir class="forget-link">
             <a class="forget2-link">Forgot password?</a>
           </dir>
-          <button type="submit" class="mysubmit">Log In</button>      
+          <button type="submit" class="signin-submit">Log In</button>      
         </form>
       </div>
       <div class="mylink">
@@ -60,7 +60,8 @@ export default {
     flex-direction: row;
     justify-content: center;
     background-color: #152b84;
-    background-image: linear-gradient(to bottom right, #152b84, #3b5dc4);
+    /* background-image: linear-gradient(to bottom right, #152b84, #3b5dc4); */
+    background-image: linear-gradient(to bottom right, #152b84, #9096c0);
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -120,7 +121,7 @@ export default {
     border: 1px solid #babadc;
     border-radius: 3px;
     padding-left: 16px;
-    transition: border .3s ease-in-out
+    transition: border .150s ease-in-out
   }
 
   ::placeholder {
@@ -141,22 +142,22 @@ export default {
     font-size: 1em;
   }  
 
-  .mysubmit {
+  .signin-submit {
     font-family: 'Roboto', Helvetica, Arial, sans-serif;
     font-weight: 900;
     margin: 10px 0px;
     font-size: 1em;
     height: 52px;
     color: #ffffff;
-    background-color: #007bfc;
-    border: 1px solid #007bfc;
+    background-color: #1485ff;
+    border: 1px solid #1485ff;
     border-radius: 3px;
-    transition: all .3s ease-in-out;
+    transition: all .150s ease-in-out;
   } 
 
-  .mysubmit:hover {
-    background-color: #2e94ff;
-    border-color: #2e94ff;
+  .signin-submit:hover {
+    background-color: #479fff;
+    border-color: #479fff;
     cursor: pointer;
   }
 
