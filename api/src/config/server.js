@@ -1,3 +1,3 @@
 export default {
-  port: process.env.NODE_ENV === 'production' ? 8080 : 3333    
+  port: process.env.NODE_ENV === 'production' ? process.env.SERVER_PORT : 3333    
 }

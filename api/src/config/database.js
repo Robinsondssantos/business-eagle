@@ -1,11 +1,11 @@
 module.exports = {
     dialect: 'postgres',
-    host: 'localhost',
-    port: 5432,
+    host:  process.env.NODE_ENV === 'production' ? process.env.HOST_ADDRESS : 'localhost',
+    port: process.env.NODE_ENV === 'production' ? process.env.HOST_PORT : 5432,
     logging: true,
-    database: 'business_eagle',
-    username: 'postgres',
-    password: 'postgres',
+    database: process.env.NODE_ENV === 'production' ? process.env.DB_NAME : 'business_eagle',
+    username: process.env.NODE_ENV === 'production' ? process.env.DB_USERNAME : 'postgres',
+    password: Process.env.NODE_ENV === 'production' ? process.env.DB_PASSWORD : 'postgres',
     define: {
       timestamps: true,
       underscored: true,

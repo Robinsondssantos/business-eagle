@@ -1,3 +1,6 @@
 export default {
-  origin: 'http://localhost:8000'
+  origin: 
+    process.env.NODE_ENV === 'production'
+      ? process.env.BASE_URL
+      : 'http://localhost:8080'
 }
