@@ -4,7 +4,7 @@
       <h1 class="title">Marboni</h1>
       <div class="box">
         <h1 class="welcome">Welcome Back</h1>
-        <form @submit.prevent="logIn" class="form-group">      
+        <form @submit.prevent="onSignIn" class="form-group">      
           <div class="input-group">
             <email-outline class="input-group-icon"></email-outline>
             <input type="text" placeholder="Email Address" class="form-control">
@@ -28,18 +28,39 @@
 
 <script>
 
-import { EmailOutline, LockOutline } from 'mdue';
+import { ref } from 'vue'
+import { useStore } from 'vuex'
+import { useRouter } from 'vue-router'
+import { EmailOutline, LockOutline } from 'mdue'
 
 export default {
   components: {
     EmailOutline,
     LockOutline
   },
-  methods: {
-    logIn: function () {
-      this.$router.push('/dashboard')
+
+  setup() {
+    const store = useStore()
+    const router = useRouter()
+
+    const email = ref('')
+    const password = ref('')
+
+    async function onSignIn () {
+      try {
+        await store.dispatch('session', { email, password })
+        router.push('/dashboard')
+      } catch(err) {
+        console.log(err)
+      }
+    } 
+
+    return {
+      email,
+      password,
+      onSignIn,
     }
-  }  
+  }
 }
 </script>
 

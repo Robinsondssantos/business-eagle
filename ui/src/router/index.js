@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 // import Home from '../views/Home.vue'
 import Dashboard from '../views/Dashboard'
-import Signin from '../views/Signin.vue'
+import Signin from '../views/Auth/Signin.vue'
 
 const routes = [
   {
