@@ -47,7 +47,7 @@ class SessionController {
         .json({ errorCode: 401, errorMessage: 'Password does not match' });
     }
 
-    const { id, name, email } = userExists;
+    const { id, name } = userExists;
 
     return res.json({
       user: {
