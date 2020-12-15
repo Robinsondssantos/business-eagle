@@ -16,6 +16,26 @@
     <div class="nav-line">
     </div>
   </div>
+  <div class="content-container">
+    <table>
+      <tr>
+        <th>Selection</th>
+        <th>Description</th>
+        <th>Client</th>
+        <th>Date</th>
+        <th>Value</th>
+        <th>Status</th>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Something</td>
+        <td>Someone</td>
+        <td>Someday</td>
+        <td>Some value</td>
+        <td>No received</td>
+      </tr>
+    </table>
+  </div>
 </template>
 
 <script>
@@ -51,8 +71,25 @@ export default {
     height: 2px;
     width: 100%;
     margin: 12px 0;
-    background: blue;
+    background: #007bfc;
     display: block;
+  }
+
+  table {
+    font-size: 0.9em;
+    border-collapse: collapse;
+  }
+
+  tr {
+    border: 1px solid #dddde5;
+  }
+
+  th {
+    font-weight: normal;
+  }
+
+  th, td {
+    padding: 16px;
   }
   
   .head-container {
@@ -60,12 +97,12 @@ export default {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
   }
 
   .head {
-    height: 42px;
-    width: 1350px;
+    height: 62px;
+    /* width: 1350px; */
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -73,17 +110,24 @@ export default {
     padding: 20px;
   }
 
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+  }
+
   .nav-container {
     /* border-bottom: 1px solid #dddde5; */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
   }
+
 
   .nav-box {
     height: 150px;
-    width: 1350px;
+    /* width: 1350px; */
     display: flex;
     flex-direction: column;
     justify-content: flex-end;

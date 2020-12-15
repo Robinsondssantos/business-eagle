@@ -63,6 +63,7 @@ export default {
     /* background-image: linear-gradient(to bottom right, #152b84, #3b5dc4); */
     background-image: linear-gradient(to bottom right, #152b84, #9096c0);
     height: 100vh;
+    min-width: 268px;
     display: flex;
     flex-direction: column;
   }
