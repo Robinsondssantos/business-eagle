@@ -1,0 +1,1 @@
+podman run --name business_eagle_sql_db -e POSTGRES_PASSWORD=my-secret-password -p 5432:5432 -d postgres
