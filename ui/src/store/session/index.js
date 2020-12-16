@@ -24,12 +24,14 @@ export default {
   },
   actions: {
      async session({ commit }, payload) {
+       console.log('payload:', payload)
        try {
-         const response = api.post('sessions', payload)
+         const response = await api.post('sessions', payload)
          commit('setSession', response.data)
          console.log('response:', response)
        } catch(err) {
-        console.log(err)
+         console.log(err.response.data)
+         throw err
        }
     }
   }

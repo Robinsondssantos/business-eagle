@@ -7,15 +7,15 @@
         <form @submit.prevent="onSignIn" class="form-group">      
           <div class="input-group">
             <email-outline class="input-group-icon"></email-outline>
-            <input type="text" placeholder="Email Address" class="form-control">
+            <input type="text" v-model="email" placeholder="Email Address" class="form-control">
           </div>
           <div class="input-group">
-            <Lock-outline class="input-group-icon"></Lock-outline>
-            <input type="text" placeholder="Password" class="form-control">
+            <lock-outline class="input-group-icon"></lock-outline>
+            <input type="text" v-model="password" placeholder="Password" class="form-control">
           </div>
-          <dir class="forget-link">
+          <div class="forget-link">
             <a class="forget2-link">Forgot password?</a>
-          </dir>
+          </div>
           <button type="submit" class="signin-submit">Log In</button>      
         </form>
       </div>
@@ -38,7 +38,6 @@ export default {
     EmailOutline,
     LockOutline
   },
-
   setup() {
     const store = useStore()
     const router = useRouter()
@@ -46,9 +45,11 @@ export default {
     const email = ref('')
     const password = ref('')
 
-    async function onSignIn () {
+    async function onSignIn() {
       try {
-        await store.dispatch('session', { email, password })
+        const emailValue = email.value
+        const passwordValue = password.value
+        await store.dispatch('session', { email: emailValue, password: passwordValue })
         router.push('/dashboard')
       } catch(err) {
         console.log(err)
