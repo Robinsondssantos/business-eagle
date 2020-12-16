@@ -14,7 +14,7 @@ module.exports = {
       'SERVER_PORT': 3333
     },
     env_production: {
-      'NODE_ENV': 'development',
+      'NODE_ENV': 'production',
       'AUTH_SECRET': '',
       'BASE_URL': 'http://localhost:8080',
       'HOST_ADDRESS': 'localhost',

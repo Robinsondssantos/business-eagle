@@ -5,8 +5,11 @@
   "main": "src/server.js",
   "scripts": {
     "dev": "NODE_ENV=development nodemon src/server.js",
+    "clean": "rm -rf build && mkdir build",
     "build": "babel src -d build",
-    "prod": "NODE_ENV=production node ./build/server.js"
+    "prod": "NODE_ENV=production node ./build/server.js",
+    "test": "NODE_ENV=test jest --detectOpenHandles --forceExit",
+    "posttest": "NODE_ENV=test sequelize db:drop"
   },
   "author": "Robinson D. S. Santos",
   "license": "MIT",

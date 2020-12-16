@@ -1,0 +1,1 @@
+podman exec -it business_eagle_sql_db psql -U postgres

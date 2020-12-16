@@ -1,10 +1,17 @@
 {
     "presets": [
-        "@babel/preset-env"
+        [
+            "@babel/preset-env",
+            {
+                "targets": {
+                    "node": "current"
+                }
+            }
+        ]
     ],
-    "ignore": [
+    "ignore": [        
         "node_modules",
         "src/database/seeds",
-        "src/database/migrations"
-    ]    
-  }
+        "src/database/migrations"        
+    ]
+}
