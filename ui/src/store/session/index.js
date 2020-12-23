@@ -24,13 +24,14 @@ export default {
   },
   actions: {
      async session({ commit }, payload) {
-       console.log('payload:', payload)
+       commit('clearNotification')
        try {
          const response = await api.post('sessions', payload)
          commit('setSession', response.data)
          console.log('response:', response)
        } catch(err) {
          console.log(err.response.data)
+         commit('setNotification', err.response.data)
          throw err
        }
     }

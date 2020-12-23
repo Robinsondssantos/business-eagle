@@ -4,7 +4,10 @@
       <h1 class="title">Marboni</h1>
       <div class="box">
         <h1 class="welcome">Welcome Back</h1>
-        <form @submit.prevent="onSignIn" class="form-group">      
+        <form @submit.prevent="onSignIn" class="form-group">   
+          <div v-if="notification">
+            {{ notification }}
+          </div>   
           <div class="input-group">
             <email-outline class="input-group-icon"></email-outline>
             <input type="text" v-model="email" placeholder="Email Address" class="form-control">
@@ -28,7 +31,7 @@
 
 <script>
 
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { useStore } from 'vuex'
 import { useRouter } from 'vue-router'
 import { EmailOutline, LockOutline } from 'mdue'
@@ -54,12 +57,13 @@ export default {
       } catch(err) {
         console.log(err)
       }
-    } 
+    }
 
     return {
       email,
       password,
       onSignIn,
+      notification: computed(() => store.state.shared.notification)
     }
   }
 }
